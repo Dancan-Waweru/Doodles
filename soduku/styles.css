@@ -24,8 +24,48 @@ tr:nth-child(3n) {
 td{
     width: 6rem;
     height: 6rem;
+    text-align: center;
+    font-size: 2rem;
 }
 
 .one{
     background-color: red;
+}
+
+
+.col{
+    background-color: #ADD9D4;
+}
+
+.row{
+    background-color: #ADD9D4;
+}
+
+.highlight{
+    background-color: #288fa6;
+}
+
+.cell{
+    background-color: #f27830
+}
+.dropDown{
+    display: flex;
+    background: white;
+    width: fit-content;
+    position: absolute;
+    padding: 5px;
+
+}
+
+.dropDown ul{
+    list-style-type: none;
+    display: flex;
+    gap: 2rem;
+}
+
+.numPad{
+    font-size: 2rem;
+    border: 1px solid black;
+    outline: none;
+    background-color: transparent;
 }
