@@ -1,6 +1,7 @@
 import { CTC, handleKeyInput } from "./drop-down.js";
 import {past, future, saveHistory, clearRedo} from "./undo_redo.js";
 import { board, loadBoardToUI } from "./board.js";
+import {solve} from "./socrates.js";
 
 document.addEventListener("keydown", handleKeyInput);
 
@@ -80,24 +81,28 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
-function redo_undo(){
+function basic_tools(){
     let container=document.createElement("div");
     let buttonA=document.createElement("button");
     let buttonB=document.createElement("button");
+    let buttonC=document.createElement("button");
 
     buttonA.textContent="undo";
     buttonB.textContent="redo";
+    buttonC.textContent="solve";
 
+    buttonC.addEventListener("click", ()=>{solve(board); loadBoardToUI(board)});
     buttonA.addEventListener("click", ()=>{past()});
     buttonB.addEventListener("click", ()=>{future()});
 
     container.appendChild(buttonA);
     container.appendChild(buttonB);
+    container.appendChild(buttonC);
 
     document.body.appendChild(container);
 
 }
 
-redo_undo();
+basic_tools();
 
 loadBoardToUI(board);
